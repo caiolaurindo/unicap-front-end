@@ -1,0 +1,58 @@
+.mainGame {
+  display: flex;    
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  height: 100vh;
+  color: rgb(0, 0, 0);
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+}
+
+.playerOne,
+.playerTwo {
+  background-color: #f0f6ff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  min-width: 220px;
+}
+
+.playerOne h2,
+.playerTwo h2 {
+  margin-bottom: 15px;
+}
+
+.playerOne div,
+.playerTwo div {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.dado {
+  font-size: 80px;
+}
+
+.btn-global {
+  position: absolute;
+  bottom: 40px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  background-color: #22c55e;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-global:hover {
+  background-color: #16a34a;
+  transform: scale(1.05);
+}
+
+.btn-global:active {
+  transform: scale(0.95);
+}
