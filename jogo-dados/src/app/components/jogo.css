@@ -1,58 +1,93 @@
 .mainGame {
-  display: flex;    
-  justify-content: center;
-  align-items: center;
-  gap: 60px;
-  height: 100vh;
-  color: rgb(0, 0, 0);
-  font-family: Arial, Helvetica, sans-serif;
-  position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 70vh;
+    padding: 20px;
+    color: white;
+}
+
+.mainGame>h1 {
+    margin-top: 10px;
+    font-size: 50px;
+}
+
+.playerContainer {
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
 }
 
 .playerOne,
 .playerTwo {
-  background-color: #f0f6ff;
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-  text-align: center;
-  min-width: 220px;
-}
-
-.playerOne h2,
-.playerTwo h2 {
-  margin-bottom: 15px;
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 16px;
+    text-align: center;
+    min-width: 220px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 .playerOne div,
 .playerTwo div {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
 }
 
 .dado {
-  font-size: 80px;
+    font-size: 70px;
 }
 
-.btn-global {
-  position: absolute;
-  bottom: 40px;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 10px;
-  background-color: #22c55e;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.2s;
+.dado-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.btn-global:hover {
-  background-color: #16a34a;
-  transform: scale(1.05);
+button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 8px;
+    background: #22c55e;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
-.btn-global:active {
-  transform: scale(0.95);
+button:hover {
+    background: #16a34a;
+    transform: scale(1.05);
+}
+
+button:disabled {
+    background: gray;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+.resultado {
+    text-align: center;
+    font-size: 20px;
+}
+
+.placar {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.final {
+    margin-top: 15px;
+    font-size: 30px;
+
+    text-align: center;
 }
