@@ -1,0 +1,139 @@
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(7, 2, 254, 0.15);
+}
+
+.nav-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+}
+
+.nav-logo {
+    width: 100px;
+    letter-spacing: 0.15em;
+    flex-shrink: 0;
+}
+
+.nav-logo span {
+    color: var(--off-white);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--off-white);
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    opacity: 0.6;
+    transition: all 0.25s ease;
+    position: relative;
+    white-space: nowrap;
+}
+
+.nav-links a::before {
+    content: '< ';
+    color: var(--royal);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.nav-links a::after {
+    content: ' >';
+    color: var(--royal);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+    color: var(--royal);
+}
+
+.nav-links a:hover::before,
+.nav-links a:hover::after {
+    opacity: 1;
+}
+
+.nav-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--royal);
+    opacity: 0.6;
+    letter-spacing: 0.15em;
+}
+
+.nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+}
+
+.nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--royal);
+    transition: all 0.3s ease;
+}
+
+.nav-drawer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.97);
+    z-index: 99;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.nav-drawer.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.nav-drawer a {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.1rem;
+    color: var(--off-white);
+    text-decoration: none;
+    letter-spacing: 0.25em;
+    opacity: 0.7;
+    transition: color 0.2s, opacity 0.2s;
+}
+
+.nav-drawer a:hover {
+    color: var(--royal);
+    opacity: 1;
+}

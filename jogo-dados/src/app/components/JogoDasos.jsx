@@ -70,7 +70,7 @@ export default function JogoDados() {
 
   return (
     <div className="mainGame">
-      
+
       <h1>Rodada: {rodada <= 5 ? rodada : 5}</h1>
 
 
@@ -120,8 +120,8 @@ export default function JogoDados() {
               {pontos1 > pontos2
                 ? "Jogador 1 venceu o jogo!"
                 : pontos2 > pontos1
-                ? "Jogador 2 venceu o jogo!"
-                : "Empate geral!"}
+                  ? "Jogador 2 venceu o jogo!"
+                  : "Empate geral!"}
             </h2>
 
             <button onClick={resetar}>Jogar Novamente</button>
