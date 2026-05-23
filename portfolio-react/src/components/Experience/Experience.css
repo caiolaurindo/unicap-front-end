@@ -1,0 +1,237 @@
+#experience {
+  position: relative;
+  padding: 140px 6%;
+  background: var(--black);
+  overflow: hidden;
+}
+
+
+.section-title {
+  margin-bottom: 80px;
+
+  font-family: "Azonix", sans-serif;
+  font-size: clamp(2.2rem, 5vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+
+  color: var(--off-white);
+}
+
+.section-title .blue {
+  color: var(--royal);
+}
+
+
+.timeline {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+
+
+.timeline::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 22px;
+
+  width: 1px;
+  height: 100%;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(7, 2, 254, 0.6),
+    rgba(7, 2, 254, 0.05)
+  );
+}
+
+
+
+.timeline-item {
+  position: relative;
+
+  margin-left: 72px;
+  padding: 32px;
+
+  background: rgba(255, 255, 255, 0.02);
+
+  border: 1px solid rgba(7, 2, 254, 0.12);
+
+  backdrop-filter: blur(10px);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+
+.timeline-item::before {
+  content: "";
+
+  position: absolute;
+  top: 38px;
+  left: -61px;
+
+  width: 18px;
+  height: 18px;
+
+  border-radius: 50%;
+
+  background: var(--royal);
+
+  box-shadow:
+    0 0 0 6px rgba(7, 2, 254, 0.12),
+    0 0 24px rgba(7, 2, 254, 0.4);
+}
+
+.timeline-item:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(7, 2, 254, 0.35);
+
+  box-shadow:
+    0 12px 40px rgba(7, 2, 254, 0.12),
+    0 0 0 1px rgba(7, 2, 254, 0.08);
+}
+
+
+
+.timeline-year {
+  display: inline-block;
+
+  margin-bottom: 16px;
+
+  font-family: "Space Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+
+  color: var(--royal);
+}
+
+
+
+.timeline-org {
+  margin-bottom: 10px;
+
+  font-family: "Rajdhani", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+
+  color: var(--off-white);
+}
+
+
+
+.timeline-role {
+  margin-bottom: 20px;
+
+  font-family: "Space Mono", monospace;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  line-height: 1.6;
+
+  color: rgba(239, 238, 246, 0.55);
+}
+
+
+.timeline-desc {
+  max-width: 850px;
+
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+
+  color: rgba(239, 238, 246, 0.7);
+}
+
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+
+  animation: revealUp 0.8s ease forwards;
+}
+
+.reveal-delay-1 {
+  animation-delay: 0.15s;
+}
+
+.reveal-delay-2 {
+  animation-delay: 0.3s;
+}
+
+@keyframes revealUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@media (max-width: 768px) {
+  #experience {
+    padding: 100px 24px;
+  }
+
+  .section-title {
+    margin-bottom: 56px;
+  }
+
+  .timeline::before {
+    left: 12px;
+  }
+
+  .timeline-item {
+    margin-left: 40px;
+    padding: 24px;
+  }
+
+  .timeline-item::before {
+    left: -36px;
+
+    width: 14px;
+    height: 14px;
+  }
+
+  .timeline-org {
+    font-size: 1.5rem;
+  }
+
+  .timeline-role {
+    font-size: 0.7rem;
+  }
+
+  .timeline-desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 2.4rem;
+  }
+
+  .timeline-item {
+    padding: 20px;
+  }
+
+  .timeline-org {
+    font-size: 1.3rem;
+  }
+
+  .timeline-desc {
+    font-size: 0.9rem;
+  }
+}

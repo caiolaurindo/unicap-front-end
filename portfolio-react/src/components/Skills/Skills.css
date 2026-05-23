@@ -1,0 +1,41 @@
+  #skills {
+        background: rgba(7, 2, 254, 0.02);
+        border-top: 1px solid rgba(7, 2, 254, 0.08);
+        border-bottom: 1px solid rgba(7, 2, 254, 0.08);
+    }
+
+    .skills-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 40px;
+    }
+
+    .skill-group h3 {
+        font-family: 'Space Mono', monospace;
+        font-size: 0.6rem;
+        letter-spacing: 0.4em;
+        color: var(--royal);
+        margin-bottom: 24px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid rgba(7, 2, 254, 0.2);
+    }
+
+    .skill-list { display: flex; flex-direction: column; gap: 14px; }
+
+    .skill-item { display: flex; align-items: center; gap: 12px; }
+
+    .skill-dot { width: 6px; height: 6px; background: var(--royal); border-radius: 50%; flex-shrink: 0; }
+
+    .skill-name { font-family: 'Rajdhani', sans-serif; font-size: 1rem; font-weight: 600; flex: 1; }
+
+    .skill-bar { width: 80px; height: 2px; background: rgba(7, 2, 254, 0.15); overflow: hidden; }
+
+    .skill-fill {
+        height: 100%;
+        background: var(--royal);
+        transform-origin: left;
+        transform: scaleX(0);
+        transition: transform 1s ease;
+    }
+
+    .skill-fill.animate { transform: scaleX(1); }
