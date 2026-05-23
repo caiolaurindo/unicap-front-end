@@ -1,4 +1,5 @@
 import "./Projects.css"
+import Link from "next/link";
 
 const projects = [
     {
@@ -126,14 +127,9 @@ export default function Projects() {
             </div>
 
             <div style={{ textAlign: "center", marginTop: "48px" }}>
-                <a
-                    href="https://github.com/laurindolucas"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-outline reveal"
-                >
+                <Link href="/projects" className="btn-outline">
                     VER TODOS
-                </a>
+                </Link>
             </div>
         </section>
     );

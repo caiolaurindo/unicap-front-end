@@ -1,0 +1,298 @@
+
+#projects-page {
+  min-height: 100vh;
+
+  padding: 140px 6%;
+
+  background: var(--black);
+  color: var(--off-white);
+}
+
+
+
+.projects-page-header {
+  margin-bottom: 80px;
+}
+
+.projects-mini-title {
+  display: inline-block;
+
+  margin-bottom: 20px;
+
+  font-family: "Space Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+
+  color: var(--royal);
+}
+
+.projects-page-title {
+  margin-bottom: 24px;
+
+  font-family: "Azonix", sans-serif;
+  font-size: clamp(2.8rem, 6vw, 6rem);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+
+  color: var(--off-white);
+}
+
+.projects-page-title span {
+  color: transparent;
+
+  -webkit-text-stroke: 1px rgba(239, 238, 246, 0.22);
+}
+
+.projects-page-subtitle {
+  max-width: 720px;
+
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+
+  color: rgba(239, 238, 246, 0.6);
+}
+
+
+
+.projects-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+
+  gap: 32px;
+}
+
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+
+  background: rgba(255, 255, 255, 0.02);
+
+  border: 1px solid rgba(7, 2, 254, 0.12);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+
+  backdrop-filter: blur(10px);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(7, 2, 254, 0.35);
+
+  box-shadow:
+    0 12px 40px rgba(7, 2, 254, 0.12),
+    0 0 0 1px rgba(7, 2, 254, 0.08);
+}
+
+
+
+.project-media {
+  position: relative;
+
+  width: 100%;
+  height: 260px;
+
+  overflow: hidden;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  display: block;
+
+  filter: brightness(0.82);
+
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.05);
+
+  filter: brightness(1);
+}
+
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(10, 10, 10, 0.92),
+      rgba(10, 10, 10, 0.25)
+    );
+
+  opacity: 0;
+
+  transition: opacity 0.35s ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-overlay-links {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+
+.overlay-link {
+  padding: 12px 20px;
+
+  border: 1px solid rgba(239, 238, 246, 0.18);
+
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--off-white);
+
+  text-decoration: none;
+
+  font-family: "Space Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.overlay-link:hover {
+  background: var(--royal);
+
+  border-color: var(--royal);
+
+  transform: translateY(-2px);
+}
+
+
+.project-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  padding: 28px;
+}
+
+
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-bottom: 20px;
+}
+
+.project-tag {
+  padding: 8px 14px;
+
+  border: 1px solid rgba(7, 2, 254, 0.18);
+
+  background: rgba(7, 2, 254, 0.05);
+
+  color: var(--royal);
+
+  font-family: "Space Mono", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+
+
+.project-title {
+  margin-bottom: 14px;
+
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+
+  color: var(--off-white);
+}
+
+
+
+.project-desc {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+
+  color: rgba(239, 238, 246, 0.65);
+}
+
+
+@media (max-width: 768px) {
+  #projects-page {
+    padding: 100px 24px;
+  }
+
+  .projects-page-header {
+    margin-bottom: 56px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-media {
+    height: 240px;
+  }
+
+  .project-body {
+    padding: 22px;
+  }
+
+  .project-title {
+    font-size: 1.3rem;
+  }
+
+  .project-desc {
+    font-size: 0.95rem;
+  }
+
+  .overlay-link {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-page-title {
+    font-size: 3rem;
+  }
+
+  .project-media {
+    height: 220px;
+  }
+
+  .project-tag {
+    font-size: 0.56rem;
+    padding: 6px 10px;
+  }
+
+  .project-title {
+    font-size: 1.2rem;
+  }
+}

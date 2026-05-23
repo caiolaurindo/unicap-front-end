@@ -1,4 +1,5 @@
 import "./Hero.css"
+import Link from "next/link";
 export default function Hero() {
     return (
         <>
@@ -8,7 +9,7 @@ export default function Hero() {
 
                 <div className="hero-image-col">
                     <div className="hero-img-wrap">
-                        <img src="/ICON.PNG" alt="" className=""/>
+                        <img src="/ICON.PNG" alt="" className="" />
                     </div>
                 </div>
 
@@ -26,7 +27,9 @@ export default function Hero() {
                         <strong>histórias reais.</strong>
                     </p>
                     <div className="hero-cta">
-                        <a href="#projects" className="btn-primary">VER PROJETOS</a>
+                        <Link href="/projects" className="btn-primary" target="black">
+                            VER PROJETOS
+                        </Link>
                         <a href="#contact" className="btn-outline">CONTATO</a>
                     </div>
 
