@@ -1,17 +1,36 @@
-import "./NavBar.css"
+import "./NavBar.css";
+import Link from "next/link";
 
 export default function NavBar() {
-    return(
-    <>
+    return (
         <nav>
             <ul className="nav-links">
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#skills">SKILLS</a></li>
-                <li> <img src="/caio logo off white.png" alt="" className="nav-logo"/></li>
-                <li><a href="#projects">PROJETOS</a></li>
-                <li><a href="#contact">CONTATO</a></li>
+                <li>
+                    <Link href="/#about">ABOUT ME</Link>
+                </li>
+
+                <li>
+                    <Link href="/#skills">SKILLS</Link>
+                </li>
+
+                <li>
+                    <Link href="/">
+                        <img
+                            src="/caio logo off white.png"
+                            alt="Logo"
+                            className="nav-logo"
+                        />
+                    </Link>
+                </li>
+
+                <li>
+                    <Link href="/#projects">PROJETOS</Link>
+                </li>
+
+                <li>
+                    <Link href="/#contact">CONTATO</Link>
+                </li>
             </ul>
         </nav>
-    </>
-    )
+    );
 }
