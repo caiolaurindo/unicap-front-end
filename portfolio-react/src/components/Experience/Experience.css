@@ -6,8 +6,9 @@
 }
 
 
+
 .section-title {
-  margin-bottom: 80px;
+  margin-bottom: 90px;
 
   font-family: "Azonix", sans-serif;
   font-size: clamp(2.2rem, 5vw, 5rem);
@@ -22,14 +23,18 @@
 }
 
 
+
 .timeline {
   position: relative;
 
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 
-  max-width: 1100px;
+  gap: 28px;
+
+  width: 100%;
+  max-width: 1700px;
+
   margin: 0 auto;
 }
 
@@ -39,16 +44,17 @@
   content: "";
 
   position: absolute;
-  top: 0;
-  left: 22px;
 
-  width: 1px;
-  height: 100%;
+  top: 34px;
+  left: 0;
+
+  width: 100%;
+  height: 1px;
 
   background: linear-gradient(
-    to bottom,
+    to right,
     rgba(7, 2, 254, 0.6),
-    rgba(7, 2, 254, 0.05)
+    rgba(7, 2, 254, 0.1)
   );
 }
 
@@ -57,8 +63,7 @@
 .timeline-item {
   position: relative;
 
-  margin-left: 72px;
-  padding: 32px;
+  padding: 70px 28px 28px;
 
   background: rgba(255, 255, 255, 0.02);
 
@@ -78,8 +83,9 @@
   content: "";
 
   position: absolute;
-  top: 38px;
-  left: -61px;
+
+  top: 25px;
+  left: 28px;
 
   width: 18px;
   height: 18px;
@@ -94,7 +100,7 @@
 }
 
 .timeline-item:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
 
   border-color: rgba(7, 2, 254, 0.35);
 
@@ -111,49 +117,42 @@
   margin-bottom: 16px;
 
   font-family: "Space Mono", monospace;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   letter-spacing: 0.18em;
 
   color: var(--royal);
 }
 
-
-
 .timeline-org {
   margin-bottom: 10px;
 
   font-family: "Rajdhani", sans-serif;
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.05;
 
   color: var(--off-white);
 }
 
-
-
 .timeline-role {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 
   font-family: "Space Mono", monospace;
-  font-size: 0.8rem;
-  font-weight: 400;
-  letter-spacing: 0.14em;
-  line-height: 1.6;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  line-height: 1.7;
 
   color: rgba(239, 238, 246, 0.55);
 }
 
-
 .timeline-desc {
-  max-width: 850px;
-
   font-family: "Rajdhani", sans-serif;
-  font-size: 1.05rem;
+  font-size: 1rem;
   line-height: 1.8;
 
-  color: rgba(239, 238, 246, 0.7);
+  color: rgba(239, 238, 246, 0.68);
 }
+
 
 
 .reveal {
@@ -179,6 +178,23 @@
 }
 
 
+
+@media (max-width: 1400px) {
+  .timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .timeline::before {
+    display: none;
+  }
+
+  .timeline-item {
+    padding-top: 60px;
+  }
+}
+
+
+
 @media (max-width: 768px) {
   #experience {
     padding: 100px 24px;
@@ -188,28 +204,50 @@
     margin-bottom: 56px;
   }
 
+
+
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
   .timeline::before {
-    left: 12px;
+    display: block;
+
+    top: 0;
+    left: 14px;
+
+    width: 1px;
+    height: 100%;
+
+    background: linear-gradient(
+      to bottom,
+      rgba(7, 2, 254, 0.6),
+      rgba(7, 2, 254, 0.05)
+    );
   }
 
   .timeline-item {
-    margin-left: 40px;
+    margin-left: 42px;
+
     padding: 24px;
   }
 
   .timeline-item::before {
-    left: -36px;
+    top: 32px;
+    left: -37px;
 
     width: 14px;
     height: 14px;
   }
 
   .timeline-org {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .timeline-role {
-    font-size: 0.7rem;
+    font-size: 0.68rem;
   }
 
   .timeline-desc {
@@ -218,9 +256,11 @@
   }
 }
 
+
+
 @media (max-width: 480px) {
   .section-title {
-    font-size: 2.4rem;
+    font-size: 2.3rem;
   }
 
   .timeline-item {
@@ -228,7 +268,7 @@
   }
 
   .timeline-org {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .timeline-desc {
