@@ -48,7 +48,7 @@ export default function AboutMe() {
                     <div className="about-photo reveal reveal-delay-2">
                         <div className="photo-frame">
                             <img
-                                src="assets/ICON.png"
+                                src="/icon2.jpeg"
                                 alt="Caio Laurindo"
                                 className="photo-placeholder"
                             />

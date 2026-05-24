@@ -5,7 +5,7 @@ const projects = [
     {
         id: 1,
         featured: true,
-        image: "assets/lotus.png",
+        image: "/LOTUS.jpg",
         alt: "Projeto Lotus",
         title: "LOTUS — Plataforma para Endometriose",
         description:
@@ -22,7 +22,7 @@ const projects = [
     },
     {
         id: 2,
-        image: "assets/geradorQrcode.png",
+        image: "/qrcode.png",
         alt: "Gerador de QRCode",
         title: "GERADOR DE QRCODE",
         description: "Gerador de QR Code criado em Python usando Flask.",
@@ -41,7 +41,7 @@ const projects = [
     },
     {
         id: 3,
-        image: "assets/sistemaEstacionamento.png",
+        image: "/gerenciadorEstacionamento.png",
         alt: "Sistema de estacionamento",
         title: "SISTEMA DE ESTACIONAMENTO",
         description:
