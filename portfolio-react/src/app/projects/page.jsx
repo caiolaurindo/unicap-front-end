@@ -1,11 +1,13 @@
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
 import NavBar from "@/components/NavBar/NavBar";
 import "./page.css";
 
 const projects = [
   {
     id: 1,
-    featured: true,
-    image: "/assets/lotus.png",
+    image: "/LOTUS.jpg",
     alt: "Projeto Lotus",
     title: "LOTUS — Plataforma para Endometriose",
     description:
@@ -16,7 +18,7 @@ const projects = [
   },
   {
     id: 2,
-    image: "/assets/geradorQrcode.png",
+    image: "/qrcode.png",
     alt: "Gerador de QRCode",
     title: "GERADOR DE QRCODE",
     description: "Gerador de QR Code criado em Python usando Flask.",
@@ -26,7 +28,7 @@ const projects = [
   },
   {
     id: 3,
-    image: "/assets/sistemaEstacionamento.png",
+    image: "/gerenciadorEstacionamento.png",
     alt: "Sistema de estacionamento",
     title: "SISTEMA DE ESTACIONAMENTO",
     description:
@@ -36,8 +38,42 @@ const projects = [
       "https://github.com/laurindolucas/gerenciador-vagas-com-streamlit.git",
     deploy: null,
   },
-
- 
+  {
+    id: 4,
+    image: "/gerenciadorEstacionamento.png",
+    alt: "Sistema de estacionamento",
+    title: "SISTEMA DE ESTACIONAMENTO",
+    description:
+      "Sistema completo para gestão de entradas, saídas e controle de estacionamento.",
+    tags: ["PYTHON", "STREAMLIT", "SUPABASE"],
+    github:
+      "https://github.com/laurindolucas/gerenciador-vagas-com-streamlit.git",
+    deploy: null,
+  },
+  {
+    id: 5,
+    image: "/gerenciadorEstacionamento.png",
+    alt: "Sistema de estacionamento",
+    title: "SISTEMA DE ESTACIONAMENTO",
+    description:
+      "Sistema completo para gestão de entradas, saídas e controle de estacionamento.",
+    tags: ["PYTHON", "STREAMLIT", "SUPABASE"],
+    github:
+      "https://github.com/laurindolucas/gerenciador-vagas-com-streamlit.git",
+    deploy: null,
+  },
+  {
+    id: 6,
+    image: "/gerenciadorEstacionamento.png",
+    alt: "Sistema de estacionamento",
+    title: "SISTEM DE ESTACIONAMENTO",
+    description:
+      "Sistema completo para gestão de entradas, saídas e controle de estacionamento.",
+    tags: ["PYTHON", "STREAMLIT", "SUPABASE"],
+    github:
+      "https://github.com/laurindolucas/gerenciador-vagas-com-streamlit.git",
+    deploy: null,
+  },
 ];
 
 function ProjectCard({
@@ -48,12 +84,9 @@ function ProjectCard({
   tags,
   github,
   deploy,
-  featured,
 }) {
   return (
-    <article
-      className={`project-card ${featured ? "project-featured" : ""}`}
-    >
+    <article className="project-card">
       <div className="project-media">
         <img src={image} alt={alt} className="project-img" />
 
@@ -99,12 +132,95 @@ function ProjectCard({
   );
 }
 
+function GithubRepoItem({ repo }) {
+  return (
+    <a
+      href={repo.html_url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="github-repo-item"
+    >
+      <div className="github-repo-top">
+        <h3>{repo.name}</h3>
+
+        <span className="github-language">
+          {repo.language || "CODE"}
+        </span>
+      </div>
+
+      <p>
+        {repo.description || "Repositório público hospedado no GitHub."}
+      </p>
+
+      <div className="github-repo-bottom">
+        <span>⭐ {repo.stargazers_count}</span>
+
+        <span>
+          {new Date(repo.updated_at).toLocaleDateString("pt-BR")}
+        </span>
+      </div>
+    </a>
+  );
+}
+
 export default function PageProjects() {
+  const [repos, setRepos] = useState([]);
+
+  useEffect(() => {
+    async function fetchRepos() {
+      try {
+        const response = await fetch(
+          "https://api.github.com/users/caiolaurindo/repos"
+        );
+
+        const data = await response.json();
+
+        const uniqueRepos = data.filter(
+          (repo, index, self) =>
+            index ===
+            self.findIndex(
+              (r) => r.name.toLowerCase() === repo.name.toLowerCase()
+            )
+        );
+
+        const filteredRepos = uniqueRepos
+          .filter((repo) => !repo.fork)
+          .sort(
+            (a, b) =>
+              new Date(b.updated_at) -
+              new Date(a.updated_at)
+          )
+          .slice(0, 5);
+
+        setRepos(filteredRepos);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    fetchRepos();
+  }, []);
+
+  const uniqueProjects = useMemo(() => {
+    return projects.filter(
+      (project, index, self) =>
+        index ===
+        self.findIndex(
+          (p) =>
+            p.title.toLowerCase() ===
+            project.title.toLowerCase()
+        )
+    );
+  }, []);
+
   return (
     <main id="projects-page">
-        <NavBar/>
+      <NavBar />
+
       <div className="projects-page-header">
-        <span className="projects-mini-title">PORTFÓLIO</span>
+        <span className="projects-mini-title">
+          PORTFÓLIO
+        </span>
 
         <h1 className="projects-page-title">
           TODOS OS
@@ -113,16 +229,46 @@ export default function PageProjects() {
         </h1>
 
         <p className="projects-page-subtitle">
-          Alguns projetos que desenvolvi utilizando tecnologias modernas,
-          focando em performance, design e experiência do usuário.
+          Alguns projetos que desenvolvi utilizando
+          tecnologias modernas, focando em performance,
+          design e experiência do usuário.
         </p>
       </div>
 
       <div className="projects-grid">
-        {projects.map((project) => (
+        {uniqueProjects.map((project) => (
           <ProjectCard key={project.id} {...project} />
         ))}
       </div>
+
+      <section className="github-section">
+        <div className="github-header">
+          <div>
+
+            <h2 className="github-title">
+              REPOSITÓRIOS DO GITHUB
+            </h2>
+          </div>
+
+          <a
+            href="https://github.com/caiolaurindo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="github-profile-link"
+          >
+            VER PERFIL
+          </a>
+        </div>
+
+        <div className="github-repo-list">
+          {repos.map((repo) => (
+            <GithubRepoItem
+              key={repo.id}
+              repo={repo}
+            />
+          ))}
+        </div>
+      </section>
     </main>
   );
 }

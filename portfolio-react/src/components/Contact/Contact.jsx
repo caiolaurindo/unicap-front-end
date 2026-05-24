@@ -1,5 +1,9 @@
 "use client";
-import "./Contact.css"
+
+import "./Contact.css";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
+
 const socialLinks = [
   {
     id: 1,
@@ -48,9 +52,28 @@ function SocialLink({ icon, label, url }) {
 }
 
 export default function Contact() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("Mensagem enviada!");
+  const form = useRef();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_9m1dqtk",
+        "template_goz1a8l",
+        form.current,
+        "9Axkn1Bi7mvtdUAJt"
+      )
+      .then(
+        () => {
+          alert("Mensagem enviada com sucesso!");
+          form.current.reset();
+        },
+        (error) => {
+          alert("Erro ao enviar mensagem.");
+          console.log(error);
+        }
+      );
   };
 
   return (
@@ -83,27 +106,28 @@ export default function Contact() {
         </div>
 
         <form
+          ref={form}
           className="contact-form reveal reveal-delay-1"
           onSubmit={handleSubmit}
         >
           <div className="form-row">
             <div className="form-field">
-              <label htmlFor="name">NOME</label>
+              <label>NOME</label>
 
               <input
-                id="name"
                 type="text"
+                name="name"
                 placeholder="Seu nome"
                 required
               />
             </div>
 
             <div className="form-field">
-              <label htmlFor="email">EMAIL</label>
+              <label>EMAIL</label>
 
               <input
-                id="email"
                 type="email"
+                name="email"
                 placeholder="seu@email.com"
                 required
               />
@@ -111,10 +135,10 @@ export default function Contact() {
           </div>
 
           <div className="form-field">
-            <label htmlFor="message">MENSAGEM</label>
+            <label>MENSAGEM</label>
 
             <textarea
-              id="message"
+              name="message"
               placeholder="Olá, gostaria de..."
               required
             />

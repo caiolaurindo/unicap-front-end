@@ -197,7 +197,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 15px 30px;
+  padding: 14px 30px;
   border: none;
   background: var(--royal);
   color: var(--black);
@@ -232,6 +232,7 @@
   transition:
     background 0.3s ease,
     transform 0.3s ease;
+    
 }
 
 .btn-outline:hover {
