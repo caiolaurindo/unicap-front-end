@@ -9,7 +9,7 @@ export default function Hero() {
 
                 <div className="hero-image-col">
                     <div className="hero-img-wrap">
-                        <img src="/ICON.PNG" alt="" className="" />
+                        <img src="/ICON.png" alt="" className="" />
                     </div>
                 </div>
 
