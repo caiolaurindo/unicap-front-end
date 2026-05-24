@@ -7,75 +7,103 @@ import "./page.css";
 const projects = [
   {
     id: 1,
+    image: "/toDo.png",
+    alt: "Sistema de gerenciamento de tarefas",
+    title: "SISTEMA DE GERENCIAMENTO DE TAREFAS",
+    description:
+      "Sistema de gerenciamento de tarefas desenvolvido com React e TypeScript, permitindo criar, editar e remover tarefas, além de acompanhar métricas de produtividade.",
+    tags: ["HTML", "CSS", "TYPESCRIPT", "REACT", "TAILWIND"],
+    github:
+      "https://github.com/laurindolucas/React-trilha-porto-digital-rocketseat/tree/main/todo",
+    deploy: null,
+  },
+
+  {
+    id: 2,
+    image: "/mgt.png",
+    alt: "MGT Website",
+    title: "MGT — WEBSITE CORPORATIVO",
+    description:
+      "Website corporativo moderno desenvolvido para uma empresa alemã com foco em experiência do usuário, identidade visual e responsividade.",
+    tags: ["HTML", "CSS", "JAVASCRIPT"],
+    github: "https://github.com/laurindolucas/MGT-WEBSITE",
+    deploy: "https://mgt-azure.vercel.app/index.html",
+  },
+
+  {
+    id: 3,
+    image: "/criticodesofa.png",
+    alt: "Crítico de Sofá",
+    title: "CRÍTICO DE SOFÁ",
+    description:
+      "Plataforma full stack de reviews de filmes com sistema de login, dashboard, avaliações, comentários e gerenciamento completo de filmes.",
+    tags: ["PHP", "MYSQL", "HTML", "CSS"],
+    github: "https://github.com/laurindolucas/CriticoDeSofa",
+    deploy: null,
+  },
+
+  {
+    id: 4,
     image: "/LOTUS.jpg",
     alt: "Projeto Lotus",
-    title: "LOTUS — Plataforma para Endometriose",
+    title: "LOTUS — PLATAFORMA PARA ENDOMETRIOSE",
     description:
-      "Plataforma de apoio às mulheres com endometriose com foco em acessibilidade e experiência do usuário.",
-    tags: ["REACT", "LOVABLE", "TYPESCRIPT", "UI/UX"],
+      "Projeto desenvolvido na Residência Tecnológica do Porto Digital para apoiar mulheres com endometriose através de tecnologia e acessibilidade.",
+    tags: ["REACT", "TYPESCRIPT", "SUPABASE", "LOVABLE"],
     github: "https://github.com/laurindolucas/lotus",
     deploy: null,
   },
+
   {
-    id: 2,
+    id: 5,
+    image: "/sulamittaLima.png",
+    alt: "Landing Page Sulamitta Lima",
+    title: "SULAMITTA LIMA — LANDING PAGE",
+    description:
+      "Landing page profissional criada para palestrante e professora com foco em autoridade, comunicação e presença digital.",
+    tags: ["HTML", "CSS", "JAVASCRIPT"],
+    github:
+      "https://github.com/laurindolucas/Sulamita-Lima-Landing-Page",
+    deploy: "https://sulamittalima.vercel.app/",
+  },
+
+  {
+    id: 6,
+    image: "/buscatempo.png",
+    alt: "Busca Clima",
+    title: "BUSCA CLIMA",
+    description:
+      "Aplicação que integra APIs de localização e clima para fornecer previsões meteorológicas, histórico de buscas e favoritos.",
+    tags: ["JAVASCRIPT", "HTML", "CSS", "API"],
+    github: "https://github.com/laurindolucas/BuscaTempo-",
+    deploy: "https://busca-tempo-eight.vercel.app/",
+  },
+
+  {
+    id: 7,
+    image: "/gerenciadorEstacionamento.png",
+    alt: "Sistema de estacionamento",
+    title: "GERENCIADOR DE ESTACIONAMENTO",
+    description:
+      "Sistema desenvolvido em Python para gerenciamento de vagas, entradas e saídas de veículos utilizando Streamlit e Supabase.",
+    tags: ["PYTHON", "STREAMLIT", "SUPABASE", "POSTGRESQL"],
+    github:
+      "https://github.com/laurindolucas/gerenciador-vagas-com-streamlit.git",
+    deploy: null,
+  },
+
+  {
+    id: 8,
     image: "/qrcode.png",
     alt: "Gerador de QRCode",
     title: "GERADOR DE QRCODE",
-    description: "Gerador de QR Code criado em Python usando Flask.",
-    tags: ["PYTHON", "FLASK", "HTML & CSS"],
+    description:
+      "Sistema para geração rápida e segura de QR Codes utilizando Flask no backend.",
+    tags: ["PYTHON", "FLASK", "HTML", "CSS"],
     github: "https://github.com/laurindolucas/gerador_qrcode",
     deploy: "https://gerador-qrcode-omega.vercel.app/",
   },
-  {
-    id: 3,
-    image: "/gerenciadorEstacionamento.png",
-    alt: "Sistema de estacionamento",
-    title: "SISTEMA DE ESTACIONAMENTO",
-    description:
-      "Sistema completo para gestão de entradas, saídas e controle de estacionamento.",
-    tags: ["PYTHON", "STREAMLIT", "SUPABASE"],
-    github:
-      "https://github.com/laurindolucas/gerenciador-vagas-com-streamlit.git",
-    deploy: null,
-  },
-  {
-    id: 4,
-    image: "/gerenciadorEstacionamento.png",
-    alt: "Sistema de estacionamento",
-    title: "SISTEMA DE ESTACIONAMENTO",
-    description:
-      "Sistema completo para gestão de entradas, saídas e controle de estacionamento.",
-    tags: ["PYTHON", "STREAMLIT", "SUPABASE"],
-    github:
-      "https://github.com/laurindolucas/gerenciador-vagas-com-streamlit.git",
-    deploy: null,
-  },
-  {
-    id: 5,
-    image: "/gerenciadorEstacionamento.png",
-    alt: "Sistema de estacionamento",
-    title: "SISTEMA DE ESTACIONAMENTO",
-    description:
-      "Sistema completo para gestão de entradas, saídas e controle de estacionamento.",
-    tags: ["PYTHON", "STREAMLIT", "SUPABASE"],
-    github:
-      "https://github.com/laurindolucas/gerenciador-vagas-com-streamlit.git",
-    deploy: null,
-  },
-  {
-    id: 6,
-    image: "/gerenciadorEstacionamento.png",
-    alt: "Sistema de estacionamento",
-    title: "SISTEM DE ESTACIONAMENTO",
-    description:
-      "Sistema completo para gestão de entradas, saídas e controle de estacionamento.",
-    tags: ["PYTHON", "STREAMLIT", "SUPABASE"],
-    github:
-      "https://github.com/laurindolucas/gerenciador-vagas-com-streamlit.git",
-    deploy: null,
-  },
 ];
-
 function ProjectCard({
   image,
   alt,

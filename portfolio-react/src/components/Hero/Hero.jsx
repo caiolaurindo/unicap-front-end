@@ -23,8 +23,8 @@ export default function Hero() {
                     </div>
                     <p className="hero-sub">
                         Um desenvolvedor que não escreve apenas linhas de código, mas <strong>constrói</strong> a sua verdadeira
-                        <em>"casa na internet"</em>. Soluções 100% personalizadas, unindo domínio tecnológico com
-                        <strong>histórias reais.</strong>
+                        <em> "casa na internet"</em>. Soluções 100% personalizadas, unindo domínio tecnológico com
+                        <strong> histórias reais.</strong>
                     </p>
                     <div className="hero-cta">
                         <Link href="/projects" className="btn-primary" target="black">
